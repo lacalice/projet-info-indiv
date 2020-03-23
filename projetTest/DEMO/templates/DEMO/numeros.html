@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+<meta charset="utf-8">
+
+<head>
+	<title>Tous les numéros</title>
+  
+</head>
+{% block body %}
+{{ test }}
+{{ obj.contenu }}
+{{contenu.obj}}
+{{Essai.contenu}}
+{{ test.contenu }}
+{{ test.contenu }}
+{{ contenu.test }}
+{{ titre }}
+{{ Essai }}
+{{ contenu }}
+{{ contenu }}
+{{ obj }}
+{{ obj.titre }}
+{{ contenu.obj }}
+{{ obj.nom }}
+{{ nom.obj }}
+{{ nom.prenom }}
+
+{% for n in test %}
+{{ n.contenu }}
+
+{% endfor %}
+
+{% for n in obj %}
+{{ n.contenu }}
+
+{% endfor %}
+
+Bienvenue 
+
+<!--
+
+{% if documents %}
+<ul>
+{% for document in documents %}
+	<li>{{ document.docfile.name }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No documents PTDRRRRRRR.</p>
+{% endif %}
+
+
+<form action="http://127.0.0.1:8000/" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}                                            
+	</p>
+
+	<p><input type="submit" value="Upload" /></p>
+</form>
+	
+{% endblock %}
+-->

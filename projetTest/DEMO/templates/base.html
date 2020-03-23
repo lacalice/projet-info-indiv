@@ -1,0 +1,421 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{%static 'images/icons/gazette_icon.png'%}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static 'fonts/fontawesome-5.0.8/css/fontawesome-all.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static 'fonts/iconic/css/material-design-iconic-font.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static 'vendor/animate/animate.css'%}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{%static 'vendor/css-hamburgers/hamburgers.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static 'vendor/animsition/css/animsition.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{%static 'css/util.min.css'%}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
+<!--===============================================================================================-->
+</head>
+<body class="animsition"></body>
+
+{% block head %}	
+	<!-- Header -->
+	<header>	
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<div class="topbar">
+				<div class="content-topbar container h-100">
+					<div class="left-topbar">
+					
+
+						<a href="about.html" class="left-topbar-item">
+							A propos
+						</a>
+
+						<a href="contact.html" class="left-topbar-item">
+							Contact
+						</a>
+
+						<a href="login.html" class="left-topbar-item">
+							Administrateur
+						</a>
+						{% if user.is_authenticated %}
+						<form action="{% url 'logout' %}" method="POST">
+							{% csrf_token %}
+							<button type="submit">Déconnexion</button>
+						</form>
+						{% endif %}
+					</div>
+
+					<div class="right-topbar">
+						<a href="#">
+							<span class="fab fa-facebook-f"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Mobile -->
+			<div class="wrap-header-mobile">
+				<!-- Logo moblie -->		
+				<div class="logo-mobile">
+					<a href="index.html"><img src="{%static 'images/icons/logo_ensc.png'%}" alt="IMG-LOGO"></a>
+				</div>
+
+				<!-- Button show menu -->
+				<div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</div>
+			</div>
+
+			<!-- Menu Mobile -->
+			<div class="menu-mobile">
+				<ul class="topbar-mobile">
+
+					<li class="left-topbar">
+						<a href="about.html" class="left-topbar-item">
+							A propos
+						</a>
+
+						<a href="contact.html" class="left-topbar-item">
+							Contact
+						</a>
+
+						<a href="#" class="left-topbar-item">
+							Sing up
+						</a>
+
+						<a href="#" class="left-topbar-item">
+							Log in
+						</a>
+					</li>
+
+					<li class="right-topbar">
+						<a href="#">
+							<span class="fab fa-facebook-f"></span>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="main-menu-m"></ul>
+					<li>
+						<a href="index.html">Accueil</a>
+					</li>
+
+					<li>
+						<a href="numeros.html">Les numéros</a>
+					</li>
+
+					<li>
+						<a href="category-02.html">Les créations </a>
+					</li>
+
+					<li>
+						<a href="category-01.html">Les rubriques</a>
+					</li>
+
+					<li>
+						<a href="category-02.html">Vie à l'école</a>
+					</li>
+
+					<li>
+						<a href="category-01.html">Life Style</a>
+					</li>
+
+					<li>
+						<a href="category-02.html">Video</a>
+					</li>
+
+					<li>
+						<a href="#">Features</a>
+						<ul class="sub-menu-m">
+							<li><a href="category-01.html">Category Page v1</a></li>
+							<li><a href="category-02.html">Category Page v2</a></li>
+							<li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
+							<li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
+							<li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
+							<li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
+							<li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
+							<li><a href="about.html">A propos de nous</a></li>
+							<li><a href="contact.html">Contactez-nous</a></li>
+						</ul>
+
+						<span class="arrow-main-menu-m">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</span>
+					</li>
+				</ul>
+			</div>
+			
+			<!--  -->
+			<div class="wrap-logo container">
+				<!-- Logo desktop -->		
+				<div class="logo">
+					<a href="index.html"><img src="{%static 'images/icons/gazette_logo.jpg'%}" alt="LOGO" style="height: 100px; width: 100px;"></a>
+				</div>	
+
+				<!-- Banner -->
+				<div class="banner-header">
+					<a href="#"><img src="{%static 'images/banner-01.jpg'%}" alt="IMG"></a>
+				</div>
+			</div>	
+			
+			<!--  -->
+			<div class="wrap-main-nav">
+				<div class="main-nav">
+					<!-- Menu desktop -->
+					<nav class="menu-desktop">
+						<a class="logo-stick" href="index.html">
+							<img src="{%static 'images/icons/logo-04.png'%}" alt="LOGO">
+						</a>
+
+						<ul class="main-menu">
+							<li class="main-menu-active">
+								<a href="index.html">Home</a>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="category-01.html">Les rubriques</a>
+
+								<div class="sub-mega-menu">
+									<div class="nav flex-column nav-pills" role="tablist">
+										<a class="nav-link active" data-toggle="pill" href="#news-0" role="tab">All</a>
+										<a class="nav-link" data-toggle="pill" href="#news-1" role="tab">Culture</a>
+										<a class="nav-link" data-toggle="pill" href="#news-2" role="tab">Sport</a>
+										<a class="nav-link" data-toggle="pill" href="#news-3" role="tab">Interviews</a>
+										<a class="nav-link" data-toggle="pill" href="#news-4" role="tab">Les TOP</a>
+										<a class="nav-link" data-toggle="pill" href="#news-5" role="tab">Sondages</a>
+										<a class="nav-link" data-toggle="pill" href="#news-6" role="tab">Les jeux</a>
+									</div>
+								</div>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="category-02.html">Les créations </a>
+
+								<div class="sub-mega-menu">
+									<div class="nav flex-column nav-pills" role="tablist">
+										<a class="nav-link active" data-toggle="pill" href="#enter-1" role="tab">All</a>
+										<a class="nav-link" data-toggle="pill" href="#enter-2" role="tab">Couvertures</a>
+										<a class="nav-link" data-toggle="pill" href="#enter-3" role="tab">Dessins</a>
+										<a class="nav-link" data-toggle="pill" href="#enter-4" role="tab">Affiches</a>
+									</div>
+								</div>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="category-01.html">Vie à l'école</a>
+
+								<div class="sub-mega-menu">
+									<div class="nav flex-column nav-pills" role="tablist">
+										<a class="nav-link active" data-toggle="pill" href="#business-1" role="tab">All</a>
+										<a class="nav-link" data-toggle="pill" href="#business-2" role="tab">Les clubs</a>
+										<a class="nav-link" data-toggle="pill" href="#business-3" role="tab">Les associations</a>
+										<a class="nav-link" data-toggle="pill" href="#business-4" role="tab">Autres</a>
+									</div>
+								</div>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="numeros.html">Les numéros</a>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="category-01.html">Proposer un article</a>
+							</li>
+
+							<li>
+								<a href="#">La rédaction</a>
+								<ul class="sub-menu">
+									<li><a href="category-01.html">Category Page v1</a></li>
+									<li><a href="category-02.html">Category Page v2</a></li>
+									<li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
+									<li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
+									<li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
+									<li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
+									<li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
+									<li><a href="about.html"> A propos de nous</a></li>
+									<li><a href="contact.html">Contactez-nous</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>	
+		</div>
+		
+	</header>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}
+	<!-- Footer -->
+	<footer>
+		<div class="bg2 p-t-40 p-b-25">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 p-b-20">
+						<div class="size-h-3 flex-s-c">
+							<a href="index.html">
+								<img class="max-s-full" src="{%static 'images/icons/logo-03.png'%}" alt="LOGO">
+							</a>
+						</div>
+
+						<div>
+							<p class="f1-s-1 cl11 p-b-16">
+								Ce site est celui du journal des étudiants de l'ENSC
+							</p>
+
+							<div class="p-t-15">
+								<a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+									<span class="fab fa-facebook-f"></span>
+								</a>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-lg-4 p-b-20">
+						<div class="size-h-3 flex-s-c">
+							<h5 class="f1-m-7 cl0">
+								Les plus lus
+							</h5>
+						</div>
+
+						<ul>
+							<li class="flex-wr-sb-s p-b-20">
+								<a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
+									<img src="{%static 'images/popular-post-01.jpg'%}" alt="IMG">
+								</a>
+
+								<div class="size-w-5">
+									<h6 class="p-b-5">
+										<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
+											Donec metus orci, malesuada et lectus vitae
+										</a>
+									</h6>
+
+									<span class="f1-s-3 cl6">
+										Feb 17
+									</span>
+								</div>
+							</li>
+
+							<li class="flex-wr-sb-s p-b-20">
+								<a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
+									<img src="{%static 'images/popular-post-02.jpg'%}" alt="IMG">
+								</a>
+
+								<div class="size-w-5">
+									<h6 class="p-b-5">
+										<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
+											Lorem ipsum dolor sit amet, consectetur
+										</a>
+									</h6>
+
+									<span class="f1-s-3 cl6">
+										Feb 16
+									</span>
+								</div>
+							</li>
+
+							<li class="flex-wr-sb-s p-b-20">
+								<a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
+									<img src="{%static 'images/popular-post-03.jpg'%}" alt="IMG">
+								</a>
+
+								<div class="size-w-5">
+									<h6 class="p-b-5">
+										<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
+											Suspendisse dictum enim quis imperdiet auctor
+										</a>
+									</h6>
+
+									<span class="f1-s-3 cl6">
+										Feb 15
+									</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-4 p-b-20">
+						<div class="size-h-3 flex-s-c">
+							<h5 class="f1-m-7 cl0">
+								Category
+							</h5>
+						</div>
+
+						<ul class="m-t--12">
+							<li class="how-bor1 p-rl-5 p-tb-10">
+								<a href="numeros.html" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									Les numéros
+								</a>
+							</li>
+
+							<li class="how-bor1 p-rl-5 p-tb-10">
+								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									Les créations
+								</a>
+							</li>
+
+							<li class="how-bor1 p-rl-5 p-tb-10">
+								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									Les rubriques
+								</a>
+							</li>
+
+							<li class="how-bor1 p-rl-5 p-tb-10">
+								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									Vie à l'école
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg11">
+			<div class="container size-h-4 flex-c-c p-tb-15">
+				<span class="f1-s-1 cl0 txt-center">
+					Copyright © 2018 
+
+
+					All rights reserved, inspiré de Colorlib.
+				</span>
+			</div>
+		</div>
+    </footer>
+    <!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+		</span>
+	</div>
+
+
+    {% endblock %}
+    <!--===============================================================================================-->	
+	<script src="{%static 'vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+    <!--===============================================================================================-->
+        <script src="{%static 'vendor/animsition/js/animsition.min.js'%}"></script>
+    <!--===============================================================================================-->
+        <script src="{%static 'vendor/bootstrap/js/popper.js'%}"></script>
+        <script src="{%static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+    <!--===============================================================================================-->
+        <script src="{%static 'js/main.js'%}"></script>
+
+    </body>
+    </html>
