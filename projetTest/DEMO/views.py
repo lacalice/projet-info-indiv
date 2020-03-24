@@ -47,14 +47,14 @@ def about(request):
 def numeros(request):
     return render (request,'DEMO/numeros.html')
 
-class EssaiListView(ListView):
-    model = Essai
-    template_name = 'DEMO/login.html'
-    context_object_name = 'test'
+#class EssaiListView(ListView):
+#    model = Essai
+#    template_name = 'DEMO/login.html'
+#    context_object_name = 'test'
 
-#def essai_view(ListView):
-#    test = Essai.objects.all()
-#    return render(ListView, 'DEMO/login.html', {'test':test})
+def essai_view(request):
+    test = Essai.objects.all()
+    return render(request, 'DEMO/login.html', {'test':test})
 
 
 

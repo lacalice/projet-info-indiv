@@ -1,106 +1,17 @@
 {% extends "base.html" %}
-{% load static %}
 
 
-<head>
-	<title>Login</title>
-  
-</head>
+{% block content %}
 
-
-	<body class="animsition"></body>
-    {% block content %}
-    <style> 
-    
-        /*assign full width inputs*/ 
-          
-        input[type=text], 
-        input[type=password] { 
-            width: 100%; 
-            padding: 12px 20px; 
-            margin: 8px 0; 
-            display: inline-block; 
-            border: 1px solid #ccc; 
-            box-sizing: border-box; 
-        } 
-        /*set a style for the buttons*/ 
-          
-        button { 
-            background-color: rgb(111, 173, 231); 
-            color: white; 
-            padding: 14px 20px; 
-            margin: 8px 0; 
-            border: none; 
-            cursor: pointer; 
-            width: 100%; 
-        } 
-        /* set a hover effect for the button*/ 
-          
-        button:hover { 
-            opacity: 0.8; 
-        } 
-        /*set extra style for the cancel button*/ 
-          
-        img.avatar { 
-            width: 40%; 
-            border-radius: 50%; 
-        } 
-        /*set padding to the container*/ 
-          
-        .container { 
-            padding: 16px; 
-        } 
-        /*set the forgot password text*/ 
-          
-        span.psw { 
-            float: right; 
-            padding-top: 16px; 
-        } 
-        /*set styles for span and cancel button on small screens*/ 
-          
-        @media screen and (max-width: 300px) { 
-            span.psw { 
-                display: block; 
-                float: none; 
-            } 
-            .cancelbtn { 
-                width: 100%; 
-            } 
-        } 
-    
-        h2{
-            text-align: center;
-            font-size: 30px;
-        }
-    </style> 
-
-
-
-{% for essai in test %}
+Bienvenue
+  {% for n in test %}
     <div>
-         <h2> hello ? {{ essai.titre }} </h2>
+         <h2> hello ? {{ n.auteur }} </h2>
     </div>
-{% endfor %}
+  {% endfor %}
 
-Bienvenue 
-<!--{% if user.is_authenticated %}
+{% endblock content %}
+
+ 
 
 
-<form enctype="multipart/form-data" action="#" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
-    <input type="file" name="fic" size=50 />
-    <input type="submit" value="Envoyer" />
- </form>
-
-{% else %}
-    <div class="container">
-        <form method="POST">
-             {% csrf_token %}
-            {{form.as_p}}
-            <button style="background-color:white; color:blue" class="btn btn-outline-info" type="submit">Login</button>
-        </form>
-        
-    </div>
-    {% endif %} -->
-{% endblock %}

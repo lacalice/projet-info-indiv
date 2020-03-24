@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from .views import EssaiListView
+#from .views import EssaiListView
 
 urlpatterns = [
     path('index.html', views.home, name='page accueil'),
@@ -15,10 +15,11 @@ urlpatterns = [
     path('blog-detail-02.html', views.blogdetail2, name='blogdetail2'),
     path('blog-detail-01.html', views.blogdetail1, name='blogdetail1'),
     path('about.html', views.about, name='about'),
-    path("login.html/", views.login_request, name="login"),
-    path('index.html', views.logout_request, name="logout"),
-    path('numeros.html', views.numeros, name="numeros"),
-    path('essai_view/', EssaiListView.as_view(), name='essai_view/'),
+    path('login.html/', views.login_request, name='login'),
+    path('index.html', views.logout_request, name='logout'),
+    path('numeros.html', views.numeros, name='numeros'),
+    #path('essai_view/', EssaiListView.as_view(), name='essai_view'),
+    path('essai_view/', views.essai_view, name='essai_view'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
